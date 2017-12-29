@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset='utf-8' />
+<meta http-equiv='content-type' content='text/html; charset=utf-8' />
+
+<title>Embed Demo</title>
+
+{{ js_resources|indent(4)|safe }}
+
+{{ css_resources|indent(4)|safe }}
+
+
+
+</head>
+<body>
+<H1>Reg's ultra basic stock ticker app</H1>
+
+<p> Select market ticker: </p>
+<form action="/">
+<select name="feature_name">
+	{% for feature in feature_names %}
+		{% if feature == current_feature_name %}
+			<option selected value="{{ feature }}">{{ feature }}</option>
+		{% else %}
+			<option value="{{ feature }}">{{ feature }}</option>
+		{% endif %}
+	{% endfor %}
+</select>
+<input type="submit">
+</form>
+
+    <!-- A simple form for changing the graph -->
+
+    {{ script|indent(4)|safe }}
+    {{ div|indent(4)|safe }}
+  </body>
+</html>
